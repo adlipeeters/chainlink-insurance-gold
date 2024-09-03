@@ -1,7 +1,7 @@
 import React from 'react'
 import useWalletStore from '@/store/wallet';
 
-import { connectWallet, disconnectWallet, changeWallet } from '@/services/old_blockchain'
+import { connectWallet, disconnectWallet, changeWallet } from '@/services/blockchain'
 import { Button } from './ui/button';
 import { Wallet } from 'lucide-react';
 import { truncate } from '@/utils/functions';

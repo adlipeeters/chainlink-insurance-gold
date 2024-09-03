@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import DashboardMenu from "./DashboardMenu"
 import DashboardConnectWallet from "./DashboardConnectWallet"
 import DashboardMobileMenu from "./DashboardMobileMenu"
+
 export function DashboardLayoutV2(
     { title, children }: { title?: string, children?: React.ReactNode }
 ) {

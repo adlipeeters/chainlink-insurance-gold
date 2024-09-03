@@ -104,12 +104,17 @@ const UsersInsurances = () => {
 
                 open={open}
                 setOpen={setOpen}
-                children={<ViewPolicy
+                // children={<ViewPolicy
+                //     setOpen={setOpen}
+                //     selectedPolicy={selectedPolicy}
+                // />}
+                title={"Policy Details"}
+            >
+                <ViewPolicy
                     setOpen={setOpen}
                     selectedPolicy={selectedPolicy}
-                />}
-                title={"Policy Details"}
-            />
+                />
+            </Modal>
         </DashboardLayoutV2>
 
     )

@@ -8,8 +8,9 @@ import usePolicies from '@/store/policies'
 import { ColumnDef } from "@tanstack/react-table"
 import { SystemPolicy } from '@/interfaces/SystemPolicy'
 import CreateEditPolicy from './components/CreateEditPolicy'
+import Image from 'next/image'
 
-export default function systemPolicies() {
+export default function SystemPolicies() {
     const [open, setOpen] = useState(false)
     const [selectedPolicy, setSelectedPolicy] = useState<SystemPolicy | null>(null)
     const { systemPolicies } = usePolicies();
@@ -38,7 +39,7 @@ export default function systemPolicies() {
         {
             accessorKey: "image",
             header: "Image",
-            cell: ({ getValue }) => <img src={getValue<string>()} alt="policy" className="h-10 w-10" />,
+            cell: ({ getValue }) => <Image width={50} height={50} src={getValue<string>()} alt="policy" className="h-10 w-10" />,
         },
         {
             accessorKey: "id",
@@ -105,12 +106,17 @@ export default function systemPolicies() {
             <Modal
                 open={open}
                 setOpen={setOpen}
-                children={<CreateEditPolicy
+                // children={<CreateEditPolicy
+                //     setOpen={setOpen}
+                //     selectedPolicy={selectedPolicy}
+                // />}
+                title={"Create Policy"}
+            >
+                <CreateEditPolicy
                     setOpen={setOpen}
                     selectedPolicy={selectedPolicy}
-                />}
-                title={"Create Policy"}
-            />
+                />
+            </Modal>
         </DashboardLayoutV2>
     )
 }

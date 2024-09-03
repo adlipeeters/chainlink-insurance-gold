@@ -15,7 +15,9 @@ const MyPolicies = () => {
             <div className="container px-0 grid md:grid-cols-2 lg:grid-cols-3 py-20 justify-center gap-6">
                 {
                     userPolicies.map((policy) => (
-                        <div className="flex justify-center">
+                        <div
+                            key={policy.id}
+                            className="flex justify-center">
                             <SpotlightCard policy={policy} />
                         </div>
                     ))
